@@ -2,17 +2,19 @@ class UdaciList
   attr_reader :title, :items
 
   def initialize(options={})
-    @title = options[:title]
+    @title = options[:title] ? options[:title] : "Untitled List"
     @items = []
   end
   def add(type, description, options={})
     type = type.downcase
-    @items.push TodoItem.new(description, options) if type == "todo"
-    @items.push EventItem.new(description, options) if type == "event"
-    @items.push LinkItem.new(description, options) if type == "link"
+    return @items.push TodoItem.new(description, options) if type == "todo"
+    return @items.push EventItem.new(description, options) if type == "event"
+    return @items.push LinkItem.new(description, options) if type == "link"
+    raise UdaciListErrors::InvalidItemType, "'#{type}' is not a valid category"
   end
   def delete(index)
-    @items.delete_at(index - 1)
+    return @items.delete_at(index - 1) if @items.length > index
+    raise UdaciListErrors::IndexExceedsListSize, "'#{index},' is not on the list'"
   end
   def all
     puts "-" * @title.length
