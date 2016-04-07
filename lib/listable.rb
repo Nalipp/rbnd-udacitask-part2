@@ -1,6 +1,6 @@
 module Listable
-  def format_description(description)
-    "#{description}".ljust(25)
+  def format_description_type(description, type)
+    "#{description}".ljust(25) + "#{type}".ljust(8)
   end
 
   def format_date(options={})
@@ -20,11 +20,14 @@ module Listable
   end
 
   def format_priority(priority)
-    return value = " ⇧" if priority == "high"
-    return value = " ⇨" if priority == "medium"
-    return value = " ⇩" if priority == "low"
-    return value = "" if !priority
+    return " ⇧".blue.blink if priority == "high"
+    return " ⇨".blue.blink if priority == "medium"
+    return " ⇩".blue.blink if priority == "low"
+    return "" if !priority
     raise UdaciListErrors::InvalidPriorityValue, "'#{priority}' is not a valid priority"
-    return value
+  end
+
+  def format_name(site_name)
+    site_name ? site_name : ""
   end
 end
