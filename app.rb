@@ -9,6 +9,7 @@ require_relative "lib/todo"
 require_relative "lib/event"
 require_relative "lib/link"
 require_relative "lib/headings"
+require_relative "lib/custom"
 
 list = UdaciList.new(title: "Julia's Stuff")
 list.add("todo", "Buy more cat food", due: "2016-02-03", priority: "low")
@@ -46,3 +47,7 @@ new_list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 new_list.filter("event")
+
+new_list.add("bucketlist", "Skydive in Inda", due: "in 1 month", priority: "high") #Add a custom type
+new_list.filter("event")
+new_list.all

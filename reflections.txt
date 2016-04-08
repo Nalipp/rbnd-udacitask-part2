@@ -9,18 +9,20 @@
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
-    Around 6 hours.
+    More than 8 hours. lol
 2. What was the most rewarding challenge you conquered?
     Getting the filtered items to work. Feel like I am getting more comfortable
     manipulating the code but still unsure about organization and need more repetition.
 3. What two additional features did you build? Why?
     a) I thought it would be nice to add to the title if the returned items were filtered
-    to help make clear what the list is for.
-    b)
+       to help make clear what the list is for.
+    b) I also added a custom options for including type. I chose it because it was one of
+       the suggestions from the tutorial and thought it would be a good way to practice building
+       a class and to get a better understanding of how the code works
 4. Where do you still have room to grow?
     There are so many questions I still have about organizing code in object oriented
     programming.
     When to use modules and mixins and when to use require_relative.
     Feel like I need to have access to reading code by people who are at a higher level.
     Also would really love to see best practices for managing this code and be able
-    to hear the thought process from an experienced professional.
+    to hear the thought process from experienced coders.
